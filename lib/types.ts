@@ -212,11 +212,3 @@ declare module 'next-auth' {
     institutionId: string
   }
 }
-
-declare module '@auth/core/jwt' {
-  interface JWT {
-    role: Role
-    institutionId: string
-    userId: string
-  }
-}
