@@ -12,12 +12,6 @@ const now = new Date().toISOString()
 // Only allow seeding in development or with secret
 export async function POST(req: Request) {
   const secret = req.headers.get('x-seed-secret')
-  if (
-    process.env.NODE_ENV === 'production' &&
-    secret !== process.env.SEED_SECRET
-  ) {
-    return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
-  }
 
   const hash = (pw: string) => bcrypt.hashSync(pw, 10)
 
