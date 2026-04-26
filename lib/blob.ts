@@ -19,7 +19,6 @@ export async function writeBlob<T>(key: string, data: T): Promise<void> {
   await put(key, JSON.stringify(data), {
     access: 'public',
     addRandomSuffix: false,
-    allowOverwrite: true,
   })
 }
 
